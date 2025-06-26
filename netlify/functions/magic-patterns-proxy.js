@@ -30,7 +30,8 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    console.log('🚀 Magic Patterns proxy function called');
+    const functionStartTime = Date.now();
+    console.log('🚀 Magic Patterns proxy function called (Pro plan - 15s timeout)');
     
     // Parse the incoming request body
     const body = JSON.parse(event.body);
@@ -85,10 +86,11 @@ exports.handler = async (event, context) => {
       return new Promise((resolve, reject) => {
         let redirectCount = 0;
         
-        const attemptRequest = (currentUrl) => {
-          const parsedUrl = new URL(currentUrl);
-          const isHttps = parsedUrl.protocol === 'https:';
-          const client = isHttps ? https : http;
+                 const attemptRequest = (currentUrl) => {
+           const requestStartTime = Date.now();
+           const parsedUrl = new URL(currentUrl);
+           const isHttps = parsedUrl.protocol === 'https:';
+           const client = isHttps ? https : http;
           
                      const options = {
              hostname: parsedUrl.hostname,
@@ -133,8 +135,9 @@ exports.handler = async (event, context) => {
               data += chunk;
             });
             
-            res.on('end', () => {
-              console.log(`📦 Response received: ${data.length} characters`);
+                         res.on('end', () => {
+               const requestDuration = Date.now() - requestStartTime;
+               console.log(`📦 Response received: ${data.length} characters (took ${requestDuration}ms)`);
               
               if (res.statusCode >= 200 && res.statusCode < 300) {
                 try {
@@ -170,7 +173,8 @@ exports.handler = async (event, context) => {
     // Make the API call
     const result = await makeRequest('https://api.magicpatterns.com/api/v2/pattern', fullBody);
     
-    console.log('✅ Magic Patterns API success:', result.id);
+    const totalDuration = Date.now() - functionStartTime;
+    console.log(`✅ Magic Patterns API success: ${result.id} (total function time: ${totalDuration}ms)`);
 
     return {
       statusCode: 200,
