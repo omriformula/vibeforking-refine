@@ -187,7 +187,16 @@ const VibecodingInterface = () => {
           status: 'processing'
         }
       }, {
-        onSuccess: () => {
+        onSuccess: async () => {
+          console.log('🚀 Screen record created successfully, now calling Magic Patterns API...');
+          
+          // Call Magic Patterns API after successful upload
+          try {
+            await callMagicPatternsAPI(uploadFile);
+          } catch (apiError) {
+            console.error('Magic Patterns API call failed:', apiError);
+          }
+          
           setUploadDialogOpen(false);
           setUploadFile(null);
           setScreenName('');
@@ -198,6 +207,48 @@ const VibecodingInterface = () => {
       console.error('Upload failed:', error);
     }
   }, [uploadFile, selectedProject, screenName, createScreen, refetchScreens, identity]);
+
+  // Magic Patterns API call function
+  const callMagicPatternsAPI = async (imageFile: File) => {
+    console.log('📡 Calling Magic Patterns API with image:', imageFile.name);
+    
+    try {
+      // Create FormData for multipart/form-data request
+      const formData = new FormData();
+      formData.append('mode', 'fast');
+      formData.append('prompt', 'Please look at the attached image and recreate');
+      formData.append('images', imageFile);
+
+      // Make API call to Magic Patterns
+      const response = await fetch('https://api.magicpatterns.com/api/v2/pattern', {
+        method: 'POST',
+        headers: {
+          'x-mp-api-key': 'mp_live_3ZPksZsusmURokxEVKQ1J6Df'
+          // Note: Don't set Content-Type header when using FormData, browser will set it automatically
+        },
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`Magic Patterns API failed with status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      
+      // Log the complete response to console
+      console.log('✅ Magic Patterns API Response:', result);
+      console.log('📄 Source Files:', result.sourceFiles);
+      console.log('🔗 Editor URL:', result.editorUrl);
+      console.log('👀 Preview URL:', result.previewUrl);
+      console.log('💬 Chat Messages:', result.chatMessages);
+      
+      return result;
+      
+    } catch (error) {
+      console.error('❌ Magic Patterns API Error:', error);
+      throw error;
+    }
+  };
 
   const handleProjectMenuOpen = (event: React.MouseEvent<HTMLElement>, project: Project) => {
     setAnchorEl(event.currentTarget);
