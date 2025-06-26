@@ -208,29 +208,43 @@ const VibecodingInterface = () => {
     }
   }, [uploadFile, selectedProject, screenName, createScreen, refetchScreens, identity]);
 
-  // Magic Patterns API call function
+  // Magic Patterns API call function (via Netlify proxy)
   const callMagicPatternsAPI = async (imageFile: File) => {
-    console.log('📡 Calling Magic Patterns API with image:', imageFile.name);
+    console.log('📡 Calling Magic Patterns API via Netlify proxy with image:', imageFile.name);
     
     try {
-      // Create FormData for multipart/form-data request
-      const formData = new FormData();
-      formData.append('mode', 'fast');
-      formData.append('prompt', 'Please look at the attached image and recreate');
-      formData.append('images', imageFile);
+      // Convert image file to base64 for sending to Netlify function
+      const imageBase64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = reader.result as string;
+          // Remove the data:image/...;base64, prefix
+          const base64Data = result.split(',')[1];
+          resolve(base64Data);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(imageFile);
+      });
 
-      // Make API call to Magic Patterns
-      const response = await fetch('https://api.magicpatterns.com/api/v2/pattern', {
+      // Prepare request body for Netlify function
+      const requestBody = {
+        imageData: imageBase64,
+        filename: imageFile.name,
+        prompt: 'Please look at the attached image and recreate'
+      };
+
+      // Call our Netlify proxy function
+      const response = await fetch('/.netlify/functions/magic-patterns-proxy', {
         method: 'POST',
         headers: {
-          'x-mp-api-key': 'mp_live_3ZPksZsusmURokxEVKQ1J6Df'
-          // Note: Don't set Content-Type header when using FormData, browser will set it automatically
+          'Content-Type': 'application/json',
         },
-        body: formData
+        body: JSON.stringify(requestBody)
       });
 
       if (!response.ok) {
-        throw new Error(`Magic Patterns API failed with status: ${response.status}`);
+        const errorData = await response.json();
+        throw new Error(`Netlify function failed: ${errorData.error} - ${errorData.details}`);
       }
 
       const result = await response.json();
