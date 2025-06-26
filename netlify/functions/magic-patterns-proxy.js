@@ -90,19 +90,18 @@ exports.handler = async (event, context) => {
           const isHttps = parsedUrl.protocol === 'https:';
           const client = isHttps ? https : http;
           
-          const options = {
-            hostname: parsedUrl.hostname,
-            port: parsedUrl.port || (isHttps ? 443 : 80),
-            path: parsedUrl.pathname + parsedUrl.search,
-            method: 'POST',
-            headers: {
-              'Content-Type': `multipart/form-data; boundary=${boundary}`,
-              'Content-Length': body.length,
-              'x-mp-api-key': process.env.MAGIC_PATTERNS_API_KEY || 'mp_live_3ZPksZsusmURokxEVKQ1J6Df',
-              'User-Agent': 'Netlify-Function/1.0',
-            },
-            timeout: 8000,
-          };
+                     const options = {
+             hostname: parsedUrl.hostname,
+             port: parsedUrl.port || (isHttps ? 443 : 80),
+             path: parsedUrl.pathname + parsedUrl.search,
+             method: 'POST',
+             headers: {
+               'Content-Type': `multipart/form-data; boundary=${boundary}`,
+               'Content-Length': body.length,
+               'x-mp-api-key': process.env.MAGIC_PATTERNS_API_KEY || 'mp_live_3ZPksZsusmURokxEVKQ1J6Df',
+               'User-Agent': 'Netlify-Function/1.0',
+             },
+           };
 
           console.log(`📡 Making request to: ${currentUrl}`);
 
@@ -153,10 +152,7 @@ exports.handler = async (event, context) => {
             });
           });
 
-          req.on('timeout', () => {
-            req.destroy();
-            reject(new Error('Request timeout'));
-          });
+                     // No artificial timeout - let Netlify handle the natural timeout
 
           req.on('error', (error) => {
             console.error('❌ Request error:', error.message);
