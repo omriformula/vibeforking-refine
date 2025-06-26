@@ -81,6 +81,11 @@ exports.handler = async (event, context) => {
 
     // Make the API call using built-in https module
     const result = await new Promise((resolve, reject) => {
+      // Set timeout for the request (9 seconds, less than Netlify's 10s limit)
+      const timeout = setTimeout(() => {
+        reject(new Error('Request timeout - Magic Patterns API took too long to respond'));
+      }, 9000);
+
       const options = {
         hostname: 'api.magicpatterns.com',
         port: 443,
@@ -90,10 +95,17 @@ exports.handler = async (event, context) => {
           'Content-Type': `multipart/form-data; boundary=${boundary}`,
           'Content-Length': fullBody.length,
           'x-mp-api-key': process.env.MAGIC_PATTERNS_API_KEY || 'mp_live_3ZPksZsusmURokxEVKQ1J6Df',
+          'User-Agent': 'Netlify-Function/1.0',
         },
+        timeout: 8000, // 8 second timeout on the socket
       };
 
+      console.log('📡 Making HTTPS request to Magic Patterns...');
+
       const req = https.request(options, (res) => {
+        clearTimeout(timeout); // Clear our custom timeout
+        
+        console.log(`📨 Magic Patterns responded with status: ${res.statusCode}`);
         let data = '';
         
         res.on('data', (chunk) => {
@@ -101,23 +113,92 @@ exports.handler = async (event, context) => {
         });
         
         res.on('end', () => {
+          console.log(`📦 Response received, length: ${data.length} characters`);
+          
+          // Handle redirects (307, 301, 302, etc.)
+          if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+            console.log(`🔄 Following redirect to: ${res.headers.location}`);
+            
+            // Parse the redirect URL
+            const redirectUrl = new URL(res.headers.location);
+            
+            // Create new options for the redirect
+            const redirectOptions = {
+              hostname: redirectUrl.hostname,
+              port: redirectUrl.port || 443,
+              path: redirectUrl.pathname + redirectUrl.search,
+              method: 'POST',
+              headers: options.headers,
+            };
+            
+            // Make the redirected request
+            const redirectReq = https.request(redirectOptions, (redirectRes) => {
+              let redirectData = '';
+              
+              redirectRes.on('data', (chunk) => {
+                redirectData += chunk;
+              });
+              
+              redirectRes.on('end', () => {
+                console.log(`📦 Redirect response received, length: ${redirectData.length} characters`);
+                
+                if (redirectRes.statusCode >= 200 && redirectRes.statusCode < 300) {
+                  try {
+                    const jsonData = JSON.parse(redirectData);
+                    console.log('✅ Successfully parsed redirect response JSON');
+                    resolve(jsonData);
+                  } catch (parseError) {
+                    console.error('❌ Failed to parse redirect JSON response:', parseError.message);
+                    reject(new Error(`Failed to parse redirect response: ${redirectData.substring(0, 200)}...`));
+                  }
+                } else {
+                  console.error(`❌ Magic Patterns API error after redirect: ${redirectRes.statusCode}`);
+                  reject(new Error(`Magic Patterns API error after redirect: ${redirectRes.statusCode} - ${redirectData.substring(0, 200)}...`));
+                }
+              });
+            });
+            
+            redirectReq.on('error', (error) => {
+              console.error('❌ Redirect request error:', error.message);
+              reject(error);
+            });
+            
+            console.log(`📤 Sending ${fullBody.length} bytes to redirect URL...`);
+            redirectReq.write(fullBody);
+            redirectReq.end();
+            return;
+          }
+          
+          // Handle normal response (non-redirect)
           if (res.statusCode >= 200 && res.statusCode < 300) {
             try {
               const jsonData = JSON.parse(data);
+              console.log('✅ Successfully parsed response JSON');
               resolve(jsonData);
             } catch (parseError) {
-              reject(new Error(`Failed to parse response: ${data}`));
+              console.error('❌ Failed to parse JSON response:', parseError.message);
+              reject(new Error(`Failed to parse response: ${data.substring(0, 200)}...`));
             }
           } else {
-            reject(new Error(`Magic Patterns API error: ${res.statusCode} - ${data}`));
+            console.error(`❌ Magic Patterns API error: ${res.statusCode}`);
+            reject(new Error(`Magic Patterns API error: ${res.statusCode} - ${data.substring(0, 200)}...`));
           }
         });
       });
 
+      req.on('timeout', () => {
+        clearTimeout(timeout);
+        req.destroy();
+        reject(new Error('Socket timeout - connection to Magic Patterns API timed out'));
+      });
+
       req.on('error', (error) => {
+        clearTimeout(timeout);
+        console.error('❌ HTTPS request error:', error.message);
         reject(error);
       });
 
+      console.log(`📤 Sending ${fullBody.length} bytes to Magic Patterns API...`);
       req.write(fullBody);
       req.end();
     });
