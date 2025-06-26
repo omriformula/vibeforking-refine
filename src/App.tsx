@@ -37,6 +37,7 @@ import {
 } from "./pages/categories";
 import { supabaseClient } from "./utility";
 import Page from "./pages/main/list";
+import FigmaIntegration from "./pages/figma";
 
 function App() {
   return (
@@ -85,6 +86,13 @@ function App() {
                       canDelete: true,
                     },
                   },
+                  {
+                    name: "figma",
+                    list: "/figma",
+                    meta: {
+                      label: "Figma to Code",
+                    },
+                  },
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -127,6 +135,9 @@ function App() {
                       <Route path="create" element={<Page />} />
                       <Route path="edit/:id" element={<Page />} />
                       <Route path="show/:id" element={<Page />} />
+                    </Route>
+                    <Route path="/figma">
+                      <Route index element={<FigmaIntegration />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

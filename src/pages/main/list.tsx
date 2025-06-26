@@ -66,6 +66,7 @@ interface Screen {
   project_id: string;
   name: string;
   original_image_url: string;
+  original_image_path?: string;
   current_code?: string;
   status: 'processing' | 'iterating' | 'ready' | 'error';
   iteration_count: number;
@@ -99,6 +100,8 @@ const VibecodingInterface = () => {
   const [screenName, setScreenName] = useState('');
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [menuProject, setMenuProject] = useState<Project | null>(null);
+  const [screenAnchorEl, setScreenAnchorEl] = useState<null | HTMLElement>(null);
+  const [menuScreen, setMenuScreen] = useState<Screen | null>(null);
 
   // Get current user identity
   const { data: identity } = useGetIdentity<{
@@ -132,6 +135,7 @@ const VibecodingInterface = () => {
   const { mutate: updateProject } = useUpdate();
   const { mutate: deleteProject } = useDelete();
   const { mutate: createScreen } = useCreate();
+  const { mutate: deleteScreen } = useDelete();
 
   const projects = projectsData?.data || [];
   const screens = screensData?.data || [];
@@ -191,11 +195,11 @@ const VibecodingInterface = () => {
           console.log('🚀 Screen record created successfully, now calling Magic Patterns API...');
           
           // Call Magic Patterns API after successful upload
-          try {
-            await callMagicPatternsAPI(uploadFile);
-          } catch (apiError) {
-            console.error('Magic Patterns API call failed:', apiError);
-          }
+          // try {
+          //   await callMagicPatternsAPI(uploadFile);
+          // } catch (apiError) {
+          //   console.error('Magic Patterns API call failed:', apiError);
+          // }
           
           setUploadDialogOpen(false);
           setUploadFile(null);
@@ -290,6 +294,56 @@ const VibecodingInterface = () => {
         handleProjectMenuClose();
       }
     });
+  };
+
+  const handleScreenMenuOpen = (event: React.MouseEvent<HTMLElement>, screen: Screen) => {
+    event.stopPropagation(); // Prevent card selection when clicking menu
+    setScreenAnchorEl(event.currentTarget);
+    setMenuScreen(screen);
+  };
+
+  const handleScreenMenuClose = () => {
+    setScreenAnchorEl(null);
+    setMenuScreen(null);
+  };
+
+  const handleDeleteScreen = async () => {
+    if (!menuScreen) return;
+    
+    try {
+      // First delete the image from storage if it exists
+      if (menuScreen.original_image_path) {
+        const { error: storageError } = await supabaseClient.storage
+          .from('screen-images')
+          .remove([menuScreen.original_image_path]);
+        
+        if (storageError) {
+          console.warn('Failed to delete image from storage:', storageError);
+          // Continue with database deletion even if storage deletion fails
+        }
+      }
+
+      // Then delete the screen record from database
+      deleteScreen({
+        resource: 'screens',
+        id: menuScreen.id
+      }, {
+        onSuccess: () => {
+          // If the deleted screen was selected, clear selection
+          if (selectedScreen?.id === menuScreen.id) {
+            setSelectedScreen(null);
+          }
+          refetchScreens();
+          handleScreenMenuClose();
+        },
+        onError: (error) => {
+          console.error('Failed to delete screen:', error);
+        }
+      });
+    } catch (error) {
+      console.error('Error deleting screen:', error);
+      handleScreenMenuClose();
+    }
   };
 
   const getStatusColor = (status: Screen['status']) => {
@@ -461,9 +515,17 @@ const VibecodingInterface = () => {
                                 sx={{ objectFit: 'cover' }}
                               />
                               <CardContent>
-                                <Typography variant="h6" gutterBottom>
-                                  {screen.name}
-                                </Typography>
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                  <Typography variant="h6" gutterBottom>
+                                    {screen.name}
+                                  </Typography>
+                                  <IconButton
+                                    size="small"
+                                    onClick={(e) => handleScreenMenuOpen(e, screen)}
+                                  >
+                                    <MoreVertIcon />
+                                  </IconButton>
+                                </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                   <Chip
                                     label={getStatusText(screen.status)}
@@ -666,6 +728,22 @@ const VibecodingInterface = () => {
           Edit
         </MenuItem>
         <MenuItem onClick={handleDeleteProject}>
+          <DeleteIcon sx={{ mr: 1 }} />
+          Delete
+        </MenuItem>
+      </Menu>
+
+      {/* Screen Menu */}
+      <Menu
+        anchorEl={screenAnchorEl}
+        open={Boolean(screenAnchorEl)}
+        onClose={handleScreenMenuClose}
+      >
+        <MenuItem onClick={handleScreenMenuClose}>
+          <EditIcon sx={{ mr: 1 }} />
+          Edit
+        </MenuItem>
+        <MenuItem onClick={handleDeleteScreen}>
           <DeleteIcon sx={{ mr: 1 }} />
           Delete
         </MenuItem>
