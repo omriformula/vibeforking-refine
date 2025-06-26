@@ -42,7 +42,7 @@ exports.handler = async (event, context) => {
     const response = await fetch('https://api.magicpatterns.com/api/v2/pattern', {
       method: 'POST',
       headers: {
-        'x-mp-api-key': 'mp_live_3ZPksZsusmURokxEVKQ1J6Df',
+        'x-mp-api-key': process.env.MAGIC_PATTERNS_API_KEY || 'mp_live_3ZPksZsusmURokxEVKQ1J6Df',
         ...formData.getHeaders()
       },
       body: formData
