@@ -12,7 +12,11 @@ import {
   LinearProgress,
   Chip,
   Divider,
-  Paper
+  Paper,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem
 } from '@mui/material';
 import {
   PlayArrow as RunIcon,
@@ -23,8 +27,25 @@ import {
 import { FigmaParser } from '../../lib/figma-to-code';
 import { FigmaAnalyzer } from '../../lib/figma-to-code/debug/FigmaAnalyzer';
 
-// Import the Login example for testing
+// Import all Figma examples
 import loginFigmaData from '../figma/information for Cursor/trios/Login.figma.json';
+import paymentFigmaData from '../figma/information for Cursor/trios/Payment.figma.json';
+import buyerFigmaData from '../figma/information for Cursor/trios/Buyer.figma.json';
+import overviewFigmaData from '../figma/information for Cursor/trios/Overview.figma.json';
+import daccordFigmaData from '../figma/information for Cursor/trios/Daccord.figma.json';
+import discoverFigmaData from '../figma/information for Cursor/trios/Discover.figma.json';
+import mastercardFigmaData from '../figma/information for Cursor/trios/Mastercard.figma.json';
+
+// Example configurations
+const FIGMA_EXAMPLES = {
+  login: { name: 'Login Form', data: loginFigmaData, description: 'Login/signup form with social authentication' },
+  payment: { name: 'Payment Flow', data: paymentFigmaData, description: 'Credit card payment interface' },
+  buyer: { name: 'E-commerce Buyer', data: buyerFigmaData, description: 'Product catalog and shopping interface' },
+  overview: { name: 'Dashboard Overview', data: overviewFigmaData, description: 'Analytics dashboard with charts and data' },
+  daccord: { name: 'Daccord Platform', data: daccordFigmaData, description: 'Complex business platform interface' },
+  discover: { name: 'Content Discovery', data: discoverFigmaData, description: 'Content browsing and discovery interface' },
+  mastercard: { name: 'Mastercard UI', data: mastercardFigmaData, description: 'Financial services interface' }
+};
 
 // Dynamic component renderer
 const DynamicComponentRenderer = ({ generatedCode }: { generatedCode: string }) => {
@@ -56,40 +77,111 @@ const DynamicComponentRenderer = ({ generatedCode }: { generatedCode: string }) 
 };
 
 const FigmaTestPage = () => {
+  const [selectedExample, setSelectedExample] = useState<keyof typeof FIGMA_EXAMPLES>('login');
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationResult, setGenerationResult] = useState<any>(null);
   const [analysisResult, setAnalysisResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+  const [testResults, setTestResults] = useState<Record<string, any>>({});
 
   const handleGenerate = useCallback(async () => {
     setIsGenerating(true);
     setError(null);
     
     try {
-      console.log('🔄 Starting Figma analysis and generation...');
+      const currentExample = FIGMA_EXAMPLES[selectedExample];
+      console.log(`🔄 Starting Figma analysis and generation for: ${currentExample.name}...`);
       
       // First, analyze the raw Figma structure
       console.log('📊 Analyzing Figma structure...');
       const analyzer = new FigmaAnalyzer();
-      const analysis = analyzer.analyze(loginFigmaData as any);
+      const analysis = analyzer.analyze(currentExample.data as any);
       console.log('📊 Analysis completed:', analysis);
       setAnalysisResult(analysis);
       
       // Then run our parser
       console.log('⚙️ Running Figma parser...');
-      console.log('📂 Login data loaded:', Object.keys(loginFigmaData));
+      console.log(`📂 ${currentExample.name} data loaded:`, Object.keys(currentExample.data));
       const parser = new FigmaParser();
-      const result = await parser.parseToReact(loginFigmaData as any);
+      const result = await parser.parseToReact(currentExample.data as any);
       
       console.log('✅ Generation completed:', result);
       setGenerationResult(result);
       
+      // Store result in test results
+      setTestResults(prev => ({
+        ...prev,
+        [selectedExample]: {
+          success: result.success,
+          components: analysis?.totalNodes || 0,
+          interactive: (analysis?.potentialButtons?.length || 0) + (analysis?.potentialInputs?.length || 0),
+          generated: result.files?.length || 0,
+          timestamp: new Date().toLocaleTimeString()
+        }
+      }));
+      
     } catch (err) {
       console.error('❌ Generation failed:', err);
-      setError(err instanceof Error ? err.message : 'Unknown error');
+      const errorMsg = err instanceof Error ? err.message : 'Unknown error';
+      setError(errorMsg);
+      
+      // Store failure in test results
+      setTestResults(prev => ({
+        ...prev,
+        [selectedExample]: {
+          success: false,
+          error: errorMsg,
+          timestamp: new Date().toLocaleTimeString()
+        }
+      }));
     } finally {
       setIsGenerating(false);
     }
+  }, [selectedExample]);
+
+  const handleTestAll = useCallback(async () => {
+    setIsGenerating(true);
+    setTestResults({});
+    
+    for (const [exampleKey, example] of Object.entries(FIGMA_EXAMPLES)) {
+      try {
+        console.log(`🔄 Testing ${example.name}...`);
+        
+        const analyzer = new FigmaAnalyzer();
+        const analysis = analyzer.analyze(example.data as any);
+        
+        const parser = new FigmaParser();
+        const result = await parser.parseToReact(example.data as any);
+        
+        setTestResults(prev => ({
+          ...prev,
+          [exampleKey]: {
+            success: result.success,
+            components: analysis?.totalNodes || 0,
+            interactive: (analysis?.potentialButtons?.length || 0) + (analysis?.potentialInputs?.length || 0),
+            generated: result.files?.length || 0,
+            timestamp: new Date().toLocaleTimeString()
+          }
+        }));
+        
+        console.log(`✅ ${example.name} completed`);
+        
+      } catch (err) {
+        console.error(`❌ ${example.name} failed:`, err);
+        const errorMsg = err instanceof Error ? err.message : 'Unknown error';
+        
+        setTestResults(prev => ({
+          ...prev,
+          [exampleKey]: {
+            success: false,
+            error: errorMsg,
+            timestamp: new Date().toLocaleTimeString()
+          }
+        }));
+      }
+    }
+    
+    setIsGenerating(false);
   }, []);
 
   // Auto-run test when page loads with special flag
@@ -112,15 +204,56 @@ const FigmaTestPage = () => {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             🧪 Figma-to-Code Test Lab
           </Typography>
+          
+          <FormControl sx={{ minWidth: 200, mr: 2 }}>
+            <InputLabel sx={{ color: 'white' }}>Example</InputLabel>
+            <Select
+              value={selectedExample}
+              onChange={(e) => {
+                setSelectedExample(e.target.value as keyof typeof FIGMA_EXAMPLES);
+                setGenerationResult(null);
+                setAnalysisResult(null);
+                setError(null);
+              }}
+              label="Example"
+              sx={{ 
+                color: 'white',
+                '.MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255, 255, 255, 0.5)' },
+                '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'white' },
+                '.MuiSvgIcon-root': { color: 'white' }
+              }}
+            >
+              {Object.entries(FIGMA_EXAMPLES).map(([key, example]) => (
+                <MenuItem key={key} value={key}>
+                  <Box>
+                    <Typography>{example.name}</Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {example.description}
+                    </Typography>
+                  </Box>
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          
           <Button
             variant="contained"
             color="secondary"
             startIcon={<RunIcon />}
             onClick={handleGenerate}
             disabled={isGenerating}
+            sx={{ mr: 1 }}
+          >
+            {isGenerating ? 'Generating...' : `Generate ${FIGMA_EXAMPLES[selectedExample].name}`}
+          </Button>
+          <Button
+            variant="contained"
+            color="warning"
+            onClick={handleTestAll}
+            disabled={isGenerating}
             sx={{ mr: 2 }}
           >
-            {isGenerating ? 'Generating...' : 'Generate from Login'}
+            🚀 Test All 7 Examples
           </Button>
           <Button
             variant="outlined"
@@ -130,6 +263,7 @@ const FigmaTestPage = () => {
               setGenerationResult(null);
               setAnalysisResult(null);
               setError(null);
+              setTestResults({});
             }}
           >
             Clear
@@ -301,6 +435,94 @@ const FigmaTestPage = () => {
               )}
             </Grid>
           </Grid>
+        )}
+
+        {/* Test Results Summary */}
+        {Object.keys(testResults).length > 0 && (
+          <Card sx={{ mb: 3 }}>
+            <CardContent>
+              <Typography variant="h6" gutterBottom>
+                🏆 Multi-Example Test Results
+              </Typography>
+              <Grid container spacing={2}>
+                {Object.entries(testResults).map(([key, result]) => (
+                  <Grid item xs={12} sm={6} md={4} key={key}>
+                    <Card 
+                      variant="outlined"
+                      sx={{ 
+                        borderColor: result.success ? 'success.main' : 'error.main',
+                        bgcolor: result.success ? 'success.50' : 'error.50'
+                      }}
+                    >
+                      <CardContent sx={{ pb: 2 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                          <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                            {FIGMA_EXAMPLES[key as keyof typeof FIGMA_EXAMPLES].name}
+                          </Typography>
+                          <Chip 
+                            label={result.success ? '✅ Success' : '❌ Failed'} 
+                            color={result.success ? 'success' : 'error'}
+                            size="small"
+                            sx={{ ml: 'auto' }}
+                          />
+                        </Box>
+                        
+                        {result.success ? (
+                          <Box sx={{ fontSize: '13px' }}>
+                            <Typography variant="body2">
+                              📊 <strong>{result.components}</strong> total nodes
+                            </Typography>
+                            <Typography variant="body2">
+                              🎯 <strong>{result.interactive}</strong> interactive elements
+                            </Typography>
+                            <Typography variant="body2">
+                              ⚡ <strong>{result.generated}</strong> files generated
+                            </Typography>
+                            <Typography variant="caption" color="text.secondary">
+                              {result.timestamp}
+                            </Typography>
+                          </Box>
+                        ) : (
+                          <Box>
+                            <Typography variant="body2" color="error">
+                              <strong>Error:</strong> {result.error}
+                            </Typography>
+                            <Typography variant="caption" color="text.secondary">
+                              {result.timestamp}
+                            </Typography>
+                          </Box>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+              
+              {/* Summary Stats */}
+              <Box sx={{ mt: 3, p: 2, bgcolor: '#f8f9fa', borderRadius: 1 }}>
+                <Typography variant="h6" gutterBottom>
+                  📈 Overall Success Rate
+                </Typography>
+                <Box sx={{ display: 'flex', gap: 3 }}>
+                  <Typography variant="body1">
+                    <strong>
+                      {Object.values(testResults).filter(r => r.success).length} / {Object.keys(testResults).length}
+                    </strong> examples working
+                  </Typography>
+                  <Typography variant="body1">
+                    <strong>
+                      {Math.round((Object.values(testResults).filter(r => r.success).length / Object.keys(testResults).length) * 100)}%
+                    </strong> success rate
+                  </Typography>
+                  <Typography variant="body1">
+                    <strong>
+                      {Object.values(testResults).reduce((sum, r) => sum + (r.interactive || 0), 0)}
+                    </strong> total interactive elements found
+                  </Typography>
+                </Box>
+              </Box>
+            </CardContent>
+          </Card>
         )}
 
         {/* Initial State */}
