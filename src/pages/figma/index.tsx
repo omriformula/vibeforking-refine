@@ -34,19 +34,13 @@ import {
   Download as DownloadIcon
 } from '@mui/icons-material';
 import LiveCodePreview from '../../components/LiveCodePreview';
+import FigmaParser, { GenerationCallbacks, GenerationProgress, FigmaNode, FigmaFile } from '../../lib/figma-to-code';
 
-interface FigmaFile {
+interface FigmaFileInfo {
   key: string;
   name: string;
   thumbnail_url?: string;
   last_modified: string;
-}
-
-interface FigmaNode {
-  id: string;
-  name: string;
-  type: string;
-  children?: FigmaNode[];
 }
 
 const FigmaIntegration = () => {
@@ -55,13 +49,14 @@ const FigmaIntegration = () => {
   const [connectDialogOpen, setConnectDialogOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [figmaFiles, setFigmaFiles] = useState<FigmaFile[]>([]);
-  const [selectedFile, setSelectedFile] = useState<FigmaFile | null>(null);
+  const [figmaFiles, setFigmaFiles] = useState<FigmaFileInfo[]>([]);
+  const [selectedFile, setSelectedFile] = useState<FigmaFileInfo | null>(null);
   const [figmaNodes, setFigmaNodes] = useState<FigmaNode[]>([]);
   const [selectedNode, setSelectedNode] = useState<FigmaNode | null>(null);
   const [generatedCode, setGeneratedCode] = useState('');
   const [rawJsonResponse, setRawJsonResponse] = useState<any>(null);
   const [error, setError] = useState('');
+  const [generationProgress, setGenerationProgress] = useState<GenerationProgress | null>(null);
 
   const handleConnect = async () => {
     if (!figmaToken.trim()) {
@@ -148,89 +143,66 @@ const FigmaIntegration = () => {
   };
 
   const handleGenerateCode = async (node: FigmaNode) => {
-    if (!figmaToken || !selectedFile) return;
+    if (!figmaToken || !selectedFile || !rawJsonResponse) return;
 
     setIsLoading(true);
     setError('');
     setSelectedNode(node);
+    setGenerationProgress(null);
 
     try {
-      // Export the node as an image first
-      const exportResponse = await fetch(
-        `https://api.figma.com/v1/images/${selectedFile.key}?ids=${node.id}&format=png&scale=2`,
-        {
-          headers: {
-            'X-Figma-Token': figmaToken
-          }
+      // Create generation callbacks for progress tracking
+      const callbacks: GenerationCallbacks = {
+        onProgress: (progress: GenerationProgress) => {
+          setGenerationProgress(progress);
+        },
+        onError: (error) => {
+          console.error('Generation error:', error);
+          setError(error.message);
+        },
+        onWarning: (warning) => {
+          console.warn('Generation warning:', warning);
         }
-      );
+      };
 
-      if (!exportResponse.ok) {
-        throw new Error('Failed to export Figma node');
+      // Initialize the Figma parser with our callbacks
+      const parser = new FigmaParser({
+        framework: 'react',
+        styleFramework: 'tailwind',
+        componentLibrary: 'shadcn-ui',
+        typescript: true,
+        includeComments: true,
+        includeDataModelIds: true,
+        singleFile: true,
+        componentNaming: 'PascalCase',
+        fileNaming: 'PascalCase'
+      }, callbacks);
+
+      // Parse the selected node using our complete figma-to-code system
+      const result = await parser.parseToReact(node);
+
+      if (result.success && result.files.length > 0) {
+        // Use the generated React component code
+        setGeneratedCode(result.files[0].content);
+        
+        // Log the complete result for debugging
+        console.log('🎉 Generation successful!', result);
+        console.log('📊 Metadata:', result.metadata);
+        console.log('⏱️ Generation time:', result.metadata.generationTimeMs + 'ms');
+        console.log('🧩 Components found:', result.metadata.totalComponents);
+        
+        if (result.warnings.length > 0) {
+          console.warn('⚠️ Generation warnings:', result.warnings);
+        }
+      } else {
+        throw new Error(result.errors[0]?.message || 'Code generation failed');
       }
-
-      const exportData = await exportResponse.json();
-      const imageUrl = exportData.images[node.id];
-
-      if (!imageUrl) {
-        throw new Error('No image URL returned from Figma');
-      }
-
-      // For now, just generate a simple mock component
-      // Later you can integrate with your preferred AI service
-      const mockGeneratedCode = `
-import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
-
-const ${node.name.replace(/[^a-zA-Z0-9]/g, '')}Component = () => {
-  return (
-    <Box sx={{ 
-      padding: 3,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: 2,
-      backgroundColor: '#f5f5f5',
-      borderRadius: 2,
-      minHeight: 200
-    }}>
-      <Typography variant="h4" component="h1">
-        ${node.name}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" textAlign="center">
-        This is a mock component generated from your Figma design: "${node.name}"
-      </Typography>
-      <Typography variant="caption" color="text.secondary">
-        Node ID: ${node.id}
-      </Typography>
-      <Button variant="contained" color="primary">
-        Sample Button
-      </Button>
-      <Box sx={{
-        width: '100%',
-        height: 100,
-        backgroundColor: 'primary.main',
-        borderRadius: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-        <Typography variant="body2" color="white">
-          Design Element from Figma
-        </Typography>
-      </Box>
-    </Box>
-  );
-};
-
-export default ${node.name.replace(/[^a-zA-Z0-9]/g, '')}Component;
-      `.trim();
-
-      setGeneratedCode(mockGeneratedCode);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to generate code');
+      console.error('Generation failed:', err);
     } finally {
       setIsLoading(false);
+      setGenerationProgress(null);
     }
   };
 

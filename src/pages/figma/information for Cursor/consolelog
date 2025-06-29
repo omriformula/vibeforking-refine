@@ -1,0 +1,1000 @@
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "ButtonBase"
+ 🔍 ButtonClassifier analyzing: "Button base" (FRAME) Object
+ 🎯 ButtonClassifier result for "Button base": 1.00 confidence Array(7)
+ 🔘 Button classification for "ButtonBase": 1.00 (threshold: 0.2)
+ ✅ BUTTON ACCEPTED: "ButtonBase" with confidence 1.00
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Google"
+ 🔍 ButtonClassifier analyzing: "google" (INSTANCE) Object
+ 🔘 Button classification for "Google": 0.00 (threshold: 0.2)
+ 📝 Input classification for "Google": 0.00 (threshold: 0.2)
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Vector"
+ 🔍 ButtonClassifier analyzing: "Vector" (VECTOR) Object
+ 🔘 Button classification for "Vector": 0.00 (threshold: 0.2)
+ 📝 Input classification for "Vector": 0.00 (threshold: 0.2)
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Text"
+ 🔍 ButtonClassifier analyzing: "Text" (TEXT) Object
+ 🎯 ButtonClassifier result for "Text": 0.90 confidence Array(4)
+ 🔘 Button classification for "Text": 0.90 (threshold: 0.2)
+ ✅ BUTTON ACCEPTED: "Text" with confidence 0.90
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Button"
+ 🔍 ButtonClassifier analyzing: "Button" (INSTANCE) Object
+ 🔘 Button classification for "Button": 0.00 (threshold: 0.2)
+ 📝 Input classification for "Button": 0.00 (threshold: 0.2)
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "ButtonBase"
+ 🔍 ButtonClassifier analyzing: "Button base" (FRAME) Object
+ 🎯 ButtonClassifier result for "Button base": 1.00 confidence Array(6)
+ 🔘 Button classification for "ButtonBase": 1.00 (threshold: 0.2)
+ ✅ BUTTON ACCEPTED: "ButtonBase" with confidence 1.00
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Microsoftlogo1"
+ 🔍 ButtonClassifier analyzing: "Microsoft_Logo 1" (INSTANCE) Object
+ 🔘 Button classification for "Microsoftlogo1": 0.00 (threshold: 0.2)
+ 📝 Input classification for "Microsoftlogo1": 0.00 (threshold: 0.2)
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Vector"
+ 🔍 ButtonClassifier analyzing: "Vector" (VECTOR) Object
+ 🔘 Button classification for "Vector": 0.00 (threshold: 0.2)
+ 📝 Input classification for "Vector": 0.00 (threshold: 0.2)
+ 🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "Text"
+ 🔍 ButtonClassifier analyzing: "Text" (TEXT) Object
+ 🎯 ButtonClassifier result for "Text": 0.80 confidence Array(3)
+ 🔘 Button classification for "Text": 0.80 (threshold: 0.2)
+ ✅ BUTTON ACCEPTED: "Text" with confidence 0.80
+ 📊 CLASSIFICATION SUMMARY: Object
+ 🎯 Interactive elements found: 44
+ 🏗️ ReactGenerator - Generating JSX for "Login" (main_wrapper)
+ 🏗️ MainWrapper "Login" has 1 children:
+   1. "MainContainer" (input) - 2 grandchildren
+ 🏗️ ReactGenerator - Generating JSX for "MainContainer" (input)
+ 🔍 Extracting text for "MainContainer": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Login" (FRAME): text="© 2025 ALL RIGHTS RESERVED"
+   - Child "LeftSide8Column" (FRAME): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 📦 Input "MainContainer" has 2 children - treating as container
+ 📦 Container "MainContainer" (input) has 2 children:
+   1. "Login" (button)
+   2. "LeftSide8Column" (button)
+ 📦 Container "MainContainer": Found 44 total interactive descendants:
+   📍 1. "MainContainer" (input)
+   📍 2. "Login" (button)
+   📍 3. "NativeHomeIndicator" (input)
+   📍 4. "Logowhite1" (button)
+   📍 5. "2025AllRightsReserved" (button)
+   📍 6. "LeftSide8Column" (button)
+   📍 7. "Text" (button)
+   📍 8. "GetStartedNow" (button)
+   📍 9. "CreateAnAccountOrLogInToGetGoing" (button)
+   📍 10. "Content" (button)
+   📍 11. "Tabbing" (button)
+   📍 12. "Login" (button)
+   📍 13. "LogIn" (button)
+   📍 14. "SignUp" (button)
+   📍 15. "SignUp" (button)
+   📍 16. "Field" (input)
+   📍 17. "Form" (input)
+   📍 18. "Input" (input)
+   📍 19. "InputWithLabel" (button)
+   📍 20. "Label" (button)
+   📍 21. "Input" (button)
+   📍 22. "Content" (input)
+   📍 23. "Text" (button)
+   📍 24. "Input" (input)
+   📍 25. "InputWithLabel" (button)
+   📍 26. "Label" (button)
+   📍 27. "Input" (button)
+   📍 28. "Content" (input)
+   📍 29. "Text" (button)
+   📍 30. "Row" (button)
+   📍 31. "Frame1" (button)
+   📍 32. "CheckboxBlock" (button)
+   📍 33. "Text" (button)
+   📍 34. "Button" (button)
+   📍 35. "Text" (button)
+   📍 36. "Buttons" (button)
+   📍 37. "ButtonBase" (button)
+   📍 38. "Text" (button)
+   📍 39. "Text" (button)
+   📍 40. "Button" (button)
+   📍 41. "ButtonBase" (button)
+   📍 42. "Text" (button)
+   📍 43. "ButtonBase" (button)
+   📍 44. "Text" (button)
+ 🚀 FLATTENING: Generating 43 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Login" (button)
+ 🔍 Extracting text for "Login": component.content?.text="© 2025 ALL RIGHTS RESERVED"
+ ✅ Found direct text: "© 2025 ALL RIGHTS RESERVED"
+ 🎯 ReactGenerator - Generating button for "Login": content="© 2025 ALL RIGHTS RESERVED"
+ 🏗️ ReactGenerator - Generating JSX for "NativeHomeIndicator" (input)
+ 🔍 Extracting text for "NativeHomeIndicator": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Rectangle" (VECTOR): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 📦 Input "NativeHomeIndicator" has 1 children - treating as container
+ 📦 Container "NativeHomeIndicator" (input) has 1 children:
+   1. "Rectangle" (image)
+ 📦 Container "NativeHomeIndicator": Found 1 total interactive descendants:
+   📍 1. "NativeHomeIndicator" (input)
+ 🏗️ ReactGenerator - Generating JSX for "Rectangle" (image)
+ 🏗️ ReactGenerator - Generating JSX for "Logowhite1" (button)
+ 🔍 Extracting text for "Logowhite1": component.content?.text="undefined"
+ 🔍 Checking 11 children for text...
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+   - Child "Vector" (VECTOR): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Logowhite1": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "2025AllRightsReserved" (button)
+ 🔍 Extracting text for "2025AllRightsReserved": component.content?.text="© 2025 ALL RIGHTS RESERVED"
+ ✅ Found direct text: "© 2025 ALL RIGHTS RESERVED"
+ 🎯 ReactGenerator - Generating button for "2025AllRightsReserved": content="© 2025 ALL RIGHTS RESERVED"
+ 🏗️ ReactGenerator - Generating JSX for "LeftSide8Column" (button)
+ 🔍 Extracting text for "LeftSide8Column": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Text" (FRAME): text="Get started now"
+   - Child "Content" (FRAME): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "LeftSide8Column": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Get started now"
+ ✅ Found direct text: "Get started now"
+ 🎯 ReactGenerator - Generating button for "Text": content="Get started now"
+ 🏗️ ReactGenerator - Generating JSX for "GetStartedNow" (button)
+ 🔍 Extracting text for "GetStartedNow": component.content?.text="Get started now"
+ ✅ Found direct text: "Get started now"
+ 🎯 ReactGenerator - Generating button for "GetStartedNow": content="Get started now"
+ 🏗️ ReactGenerator - Generating JSX for "CreateAnAccountOrLogInToGetGoing" (button)
+ 🔍 Extracting text for "CreateAnAccountOrLogInToGetGoing": component.content?.text="Create an account or log in to get going."
+ ✅ Found direct text: "Create an account or log in to get going."
+ 🎯 ReactGenerator - Generating button for "CreateAnAccountOrLogInToGetGoing": content="Create an account or log in to get going."
+ 🏗️ ReactGenerator - Generating JSX for "Content" (button)
+ 🔍 Extracting text for "Content": component.content?.text="undefined"
+ 🔍 Checking 3 children for text...
+   - Child "Tabbing" (FRAME): text="undefined"
+   - Child "Field" (FRAME): text="undefined"
+   - Child "Buttons" (FRAME): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Content": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Tabbing" (button)
+ 🔍 Extracting text for "Tabbing": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Login" (FRAME): text="Log in "
+   - Child "SignUp" (FRAME): text="Sign up"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Tabbing": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Login" (button)
+ 🔍 Extracting text for "Login": component.content?.text="Log in "
+ ✅ Found direct text: "Log in "
+ 🎯 ReactGenerator - Generating button for "Login": content="Log in "
+ 🏗️ ReactGenerator - Generating JSX for "LogIn" (button)
+ 🔍 Extracting text for "LogIn": component.content?.text="Log in "
+ ✅ Found direct text: "Log in "
+ 🎯 ReactGenerator - Generating button for "LogIn": content="Log in "
+ 🏗️ ReactGenerator - Generating JSX for "SignUp" (button)
+ 🔍 Extracting text for "SignUp": component.content?.text="Sign up"
+ ✅ Found direct text: "Sign up"
+ 🎯 ReactGenerator - Generating button for "SignUp": content="Sign up"
+ 🏗️ ReactGenerator - Generating JSX for "SignUp" (button)
+ 🔍 Extracting text for "SignUp": component.content?.text="Sign up"
+ ✅ Found direct text: "Sign up"
+ 🎯 ReactGenerator - Generating button for "SignUp": content="Sign up"
+ 🏗️ ReactGenerator - Generating JSX for "Field" (input)
+ 🔍 Extracting text for "Field": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Form" (FRAME): text="undefined"
+   - Child "Row" (FRAME): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 📦 Input "Field" has 2 children - treating as container
+ 📦 Container "Field" (input) has 2 children:
+   1. "Form" (input)
+   2. "Row" (button)
+ 📦 Container "Field": Found 20 total interactive descendants:
+   📍 1. "Field" (input)
+   📍 2. "Form" (input)
+   📍 3. "Input" (input)
+   📍 4. "InputWithLabel" (button)
+   📍 5. "Label" (button)
+   📍 6. "Input" (button)
+   📍 7. "Content" (input)
+   📍 8. "Text" (button)
+   📍 9. "Input" (input)
+   📍 10. "InputWithLabel" (button)
+   📍 11. "Label" (button)
+   📍 12. "Input" (button)
+   📍 13. "Content" (input)
+   📍 14. "Text" (button)
+   📍 15. "Row" (button)
+   📍 16. "Frame1" (button)
+   📍 17. "CheckboxBlock" (button)
+   📍 18. "Text" (button)
+   📍 19. "Button" (button)
+   📍 20. "Text" (button)
+ 🚀 FLATTENING: Generating 19 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Form" (input)
+ 🔍 Extracting text for "Form": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Input" (FRAME): text="This is a hint text to help user."
+   - Child "Input" (FRAME): text="This is a hint text to help user."
+ ❌ No text found, using fallback "Button"
+ 📦 Input "Form" has 2 children - treating as container
+ 📦 Container "Form" (input) has 2 children:
+   1. "Input" (input)
+   2. "Input" (input)
+ 📦 Container "Form": Found 13 total interactive descendants:
+   📍 1. "Form" (input)
+   📍 2. "Input" (input)
+   📍 3. "InputWithLabel" (button)
+   📍 4. "Label" (button)
+   📍 5. "Input" (button)
+   📍 6. "Content" (input)
+   📍 7. "Text" (button)
+   📍 8. "Input" (input)
+   📍 9. "InputWithLabel" (button)
+   📍 10. "Label" (button)
+   📍 11. "Input" (button)
+   📍 12. "Content" (input)
+   📍 13. "Text" (button)
+ 🚀 FLATTENING: Generating 12 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Row" (button)
+ 🔍 Extracting text for "Row": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Frame1" (FRAME): text="Remember me"
+   - Child "Button" (FRAME): text="Forgot password"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Row": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Frame1" (button)
+ 🔍 Extracting text for "Frame1": component.content?.text="Remember me"
+ ✅ Found direct text: "Remember me"
+ 🎯 ReactGenerator - Generating button for "Frame1": content="Remember me"
+ 🏗️ ReactGenerator - Generating JSX for "CheckboxBlock" (button)
+ 🔍 Extracting text for "CheckboxBlock": component.content?.text="undefined"
+ 🔍 Checking 0 children for text...
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "CheckboxBlock": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Remember me"
+ ✅ Found direct text: "Remember me"
+ 🎯 ReactGenerator - Generating button for "Text": content="Remember me"
+ 🏗️ ReactGenerator - Generating JSX for "Button" (button)
+ 🔍 Extracting text for "Button": component.content?.text="Forgot password"
+ ✅ Found direct text: "Forgot password"
+ 🎯 ReactGenerator - Generating button for "Button": content="Forgot password"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Forgot password"
+ ✅ Found direct text: "Forgot password"
+ 🎯 ReactGenerator - Generating button for "Text": content="Forgot password"
+ 🏗️ ReactGenerator - Generating JSX for "Form" (input)
+ 🔍 Extracting text for "Form": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Input" (FRAME): text="This is a hint text to help user."
+   - Child "Input" (FRAME): text="This is a hint text to help user."
+ ❌ No text found, using fallback "Button"
+ 📦 Input "Form" has 2 children - treating as container
+ 📦 Container "Form" (input) has 2 children:
+   1. "Input" (input)
+   2. "Input" (input)
+ 📦 Container "Form": Found 13 total interactive descendants:
+   📍 1. "Form" (input)
+   📍 2. "Input" (input)
+   📍 3. "InputWithLabel" (button)
+   📍 4. "Label" (button)
+   📍 5. "Input" (button)
+   📍 6. "Content" (input)
+   📍 7. "Text" (button)
+   📍 8. "Input" (input)
+   📍 9. "InputWithLabel" (button)
+   📍 10. "Label" (button)
+   📍 11. "Input" (button)
+   📍 12. "Content" (input)
+   📍 13. "Text" (button)
+ 🚀 FLATTENING: Generating 12 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Email"
+ ✅ Found direct text: "Email"
+ 🎯 ReactGenerator - Generating button for "Label": content="Email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 1 children for text...
+   - Child "Content" (FRAME): text="Enter your email"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="Enter your email"
+ ✅ Found direct text: "Enter your email"
+ 🎯 ReactGenerator - Generating button for "Text": content="Enter your email"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (input)
+ 🔍 Extracting text for "Input": component.content?.text="This is a hint text to help user."
+ ✅ Found direct text: "This is a hint text to help user."
+ 📦 Input "Input" has 1 children - treating as container
+ 📦 Container "Input" (input) has 1 children:
+   1. "InputWithLabel" (button)
+ 📦 Container "Input": Found 6 total interactive descendants:
+   📍 1. "Input" (input)
+   📍 2. "InputWithLabel" (button)
+   📍 3. "Label" (button)
+   📍 4. "Input" (button)
+   📍 5. "Content" (input)
+   📍 6. "Text" (button)
+ 🚀 FLATTENING: Generating 5 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 📦 Input "Content" has 1 children - treating as container
+ 📦 Container "Content" (input) has 1 children:
+   1. "Text" (button)
+ 📦 Container "Content": Found 2 total interactive descendants:
+   📍 1. "Content" (input)
+   📍 2. "Text" (button)
+ 🚀 FLATTENING: Generating 1 interactive descendants directly
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ ✅ Found direct text: "••••••••"
+ 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ 🏗️ ReactGenerator - Generating JSX for "InputWithLabel" (button)
+ 🔍 Extracting text for "InputWithLabel": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "InputWithLabel": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Label" (button)
+ 🔍 Extracting text for "Label": component.content?.text="Password"
+ ✅ Found direct text: "Password"
+ 🎯 ReactGenerator - Generating button for "Label": content="Password"
+ 🏗️ ReactGenerator - Generating JSX for "Input" (button)
+ 🔍 Extracting text for "Input": component.content?.text="undefined"
+ 🔍 Checking 2 children for text...
+   - Child "Content" (FRAME): text="••••••••"
+   - Child "Eyeoff" (INSTANCE): text="undefined"
+ ❌ No text found, using fallback "Button"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Input": content="Button"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Content" (input)
+ReactGenerator.ts:382 🔍 Extracting text for "Content": component.content?.text="••••••••"
+ReactGenerator.ts:385 ✅ Found direct text: "••••••••"
+ReactGenerator.ts:307 📦 Input "Content" has 1 children - treating as container
+ReactGenerator.ts:250 📦 Container "Content" (input) has 1 children:
+ReactGenerator.ts:252   1. "Text" (button)
+ReactGenerator.ts:258 📦 Container "Content": Found 2 total interactive descendants:
+ReactGenerator.ts:260   📍 1. "Content" (input)
+ReactGenerator.ts:260   📍 2. "Text" (button)
+ReactGenerator.ts:265 🚀 FLATTENING: Generating 1 interactive descendants directly
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ReactGenerator.ts:385 ✅ Found direct text: "••••••••"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="••••••••"
+ReactGenerator.ts:385 ✅ Found direct text: "••••••••"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="••••••••"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Row" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Row": component.content?.text="undefined"
+ReactGenerator.ts:390 🔍 Checking 2 children for text...
+ReactGenerator.ts:392   - Child "Frame1" (FRAME): text="Remember me"
+ReactGenerator.ts:392   - Child "Button" (FRAME): text="Forgot password"
+ReactGenerator.ts:399 ❌ No text found, using fallback "Button"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Row": content="Button"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Frame1" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Frame1": component.content?.text="Remember me"
+ReactGenerator.ts:385 ✅ Found direct text: "Remember me"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Frame1": content="Remember me"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "CheckboxBlock" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "CheckboxBlock": component.content?.text="undefined"
+ReactGenerator.ts:390 🔍 Checking 0 children for text...
+ReactGenerator.ts:399 ❌ No text found, using fallback "Button"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "CheckboxBlock": content="Button"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="Remember me"
+ReactGenerator.ts:385 ✅ Found direct text: "Remember me"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="Remember me"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Button" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Button": component.content?.text="Forgot password"
+ReactGenerator.ts:385 ✅ Found direct text: "Forgot password"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Button": content="Forgot password"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="Forgot password"
+ReactGenerator.ts:385 ✅ Found direct text: "Forgot password"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="Forgot password"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Buttons" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Buttons": component.content?.text="undefined"
+ReactGenerator.ts:390 🔍 Checking 3 children for text...
+ReactGenerator.ts:392   - Child "Button" (INSTANCE): text="undefined"
+ReactGenerator.ts:392   - Child "Row" (FRAME): text="OR"
+ReactGenerator.ts:392   - Child "Button" (FRAME): text="undefined"
+ReactGenerator.ts:399 ❌ No text found, using fallback "Button"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Buttons": content="Button"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "ButtonBase" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "ButtonBase": component.content?.text="Log in"
+ReactGenerator.ts:385 ✅ Found direct text: "Log in"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "ButtonBase": content="Log in"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="Log in"
+ReactGenerator.ts:385 ✅ Found direct text: "Log in"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="Log in"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="OR"
+ReactGenerator.ts:385 ✅ Found direct text: "OR"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="OR"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Button" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Button": component.content?.text="undefined"
+ReactGenerator.ts:390 🔍 Checking 2 children for text...
+ReactGenerator.ts:392   - Child "Button" (INSTANCE): text="undefined"
+ReactGenerator.ts:392   - Child "Button" (INSTANCE): text="undefined"
+ReactGenerator.ts:399 ❌ No text found, using fallback "Button"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Button": content="Button"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "ButtonBase" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "ButtonBase": component.content?.text="Continue with Google"
+ReactGenerator.ts:385 ✅ Found direct text: "Continue with Google"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "ButtonBase": content="Continue with Google"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="Continue with Google"
+ReactGenerator.ts:385 ✅ Found direct text: "Continue with Google"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="Continue with Google"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "ButtonBase" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "ButtonBase": component.content?.text="Continue in with Microsoft"
+ReactGenerator.ts:385 ✅ Found direct text: "Continue in with Microsoft"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "ButtonBase": content="Continue in with Microsoft"
+ReactGenerator.ts:168 🏗️ ReactGenerator - Generating JSX for "Text" (button)
+ReactGenerator.ts:382 🔍 Extracting text for "Text": component.content?.text="Continue in with Microsoft"
+ReactGenerator.ts:385 ✅ Found direct text: "Continue in with Microsoft"
+ReactGenerator.ts:291 🎯 ReactGenerator - Generating button for "Text": content="Continue in with Microsoft"
+index.tsx:84 ✅ Generation completed: Object

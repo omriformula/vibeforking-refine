@@ -38,6 +38,8 @@ import {
 import { supabaseClient } from "./utility";
 import Page from "./pages/main/list";
 import FigmaIntegration from "./pages/figma";
+import FigmaTestPage from "./pages/figma-test";
+import FigmaPreview from "./pages/figma-preview";
 
 function App() {
   return (
@@ -93,6 +95,20 @@ function App() {
                       label: "Figma to Code",
                     },
                   },
+                  {
+                    name: "figma-test",
+                    list: "/figma-test",
+                    meta: {
+                      label: "🧪 Figma Test Lab",
+                    },
+                  },
+                  {
+                    name: "figma-preview",
+                    list: "/figma-preview",
+                    meta: {
+                      label: "🎨 Figma Preview",
+                    },
+                  },
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -138,6 +154,12 @@ function App() {
                     </Route>
                     <Route path="/figma">
                       <Route index element={<FigmaIntegration />} />
+                    </Route>
+                    <Route path="/figma-test">
+                      <Route index element={<FigmaTestPage />} />
+                    </Route>
+                    <Route path="/figma-preview">
+                      <Route index element={<FigmaPreview />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>

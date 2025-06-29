@@ -1,0 +1,410 @@
+import React from 'react';
+import { Input, Button } from '@/components/ui';
+
+export default function Login() {
+  return (
+    <main data-model-id="2:530">
+      <div className="w-[1440px] h-[900px] flex flex-row gap-[32px] p-[32px]" data-model-id="2:531">
+        <Button className="w-[672px] h-[836px] w-full h-full absolute top-[32px] left-[32px] bg-[#0d0d1b] bg-[#0d0d1b] rounded-[24px]" data-model-id="2:532">
+          © 2025 ALL RIGHTS RESERVED
+        </Button>
+        <div className="w-[375px] h-[34px] absolute top-[834px] left-[32px]" data-model-id="2:937">
+          <img className="w-[148px] h-[5px] absolute top-[855px] left-[146px] bg-gray-900 rounded-[100px]" src="/placeholder.jpg" alt="Image" data-model-id="2:938" />
+        </div>
+        <Button className="w-72 h-12 absolute top-[426px] left-[224px] bg-white bg-white" data-model-id="2:939">
+          Button
+        </Button>
+        <Button className="w-[466px] h-6 absolute top-[832px] left-[135px] bg-[#878d96] text-base font-normal text-center leading-[24px] text-[#878d96]" data-model-id="2:951">
+          © 2025 ALL RIGHTS RESERVED
+        </Button>
+        <Button className="w-[672px] h-[836px] w-full h-full absolute top-[32px] left-[736px] flex flex-col items-stretch gap-6" data-model-id="2:952">
+          Button
+        </Button>
+        <Button className="w-[672px] h-20 w-full h-auto absolute top-[153px] left-[736px] flex flex-col items-stretch gap-3" data-model-id="2:953">
+          Get started now
+        </Button>
+        <Button className="w-[672px] h-[44px] w-full h-auto absolute top-[153px] left-[736px] bg-[#0d0d1b] text-[40px] font-semibold text-center leading-[44px] text-[#0d0d1b]" data-model-id="2:954">
+          Get started now
+        </Button>
+        <Button className="w-[672px] h-6 w-full h-auto absolute top-[209px] left-[736px] bg-[#878d96] text-base font-normal text-center leading-[24px] text-[#878d96]" data-model-id="2:955">
+          Create an account or log in to get going.
+        </Button>
+        <Button className="w-[466px] h-[491px] h-auto absolute top-[257px] left-[839px] flex flex-col gap-6 bg-white bg-white pr-[24px] pl-[24px]" data-model-id="2:956">
+          Button
+        </Button>
+        <Button className="w-[418px] h-[36px] w-full absolute top-[257px] left-[863px] flex flex-row items-stretch gap-1 bg-[#f2f4f8] bg-[#f2f4f8] rounded-[7px] p-[2px]" data-model-id="2:957">
+          Button
+        </Button>
+        <Button className="w-[207px] h-8 w-full h-full absolute top-[259px] left-[865px] flex flex-row items-stretch gap-3 bg-white bg-white rounded-md shadow-sm pt-[12px] pr-[14px] pb-[12px] pl-[14px]" data-model-id="2:958">
+          Log in 
+        </Button>
+        <Button className="w-[41px] h-5 w-auto h-auto absolute top-[265px] left-[948px] bg-[#0d0d1b] text-sm font-semibold text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:959">
+          Log in 
+        </Button>
+        <Button className="w-[207px] h-8 w-full h-full absolute top-[259px] left-[1073px] flex flex-row items-stretch gap-3 bg-white bg-white rounded-[7px] border-1 border-[#eff0f6] pt-[12px] pr-[14px] pb-[12px] pl-[14px]" data-model-id="2:960">
+          Sign up
+        </Button>
+        <Button className="w-[50px] h-5 w-auto h-auto absolute top-[265px] left-[1151px] bg-[#878d96] text-sm font-normal text-left leading-[20px] text-[#878d96]" data-model-id="2:961">
+          Sign up
+        </Button>
+        <div className="w-[418px] h-[196px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-4" data-model-id="2:962">
+          <div className="w-[418px] h-[160px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-5" data-model-id="2:963">
+            <div className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:964">
+              <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+                Email
+              </Button>
+              <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+                Email
+              </Button>
+              <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+                Button
+              </Button>
+              <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+                <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+                  Enter your email
+                </Button>
+              </div>
+              <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+                Enter your email
+              </Button>
+            </div>
+            <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+              Email
+            </Button>
+            <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+              Email
+            </Button>
+            <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+              Button
+            </Button>
+            <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+              <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+                Enter your email
+              </Button>
+            </div>
+            <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+              Enter your email
+            </Button>
+            <div className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:973">
+              <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+                Password
+              </Button>
+              <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+                Password
+              </Button>
+              <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+                Button
+              </Button>
+              <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+                <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+                  ••••••••
+                </Button>
+              </div>
+              <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+                ••••••••
+              </Button>
+            </div>
+            <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+              Password
+            </Button>
+            <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+              Password
+            </Button>
+            <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+              Button
+            </Button>
+            <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+              <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+                ••••••••
+              </Button>
+            </div>
+            <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+              ••••••••
+            </Button>
+          </div>
+          <div className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:964">
+            <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+              Email
+            </Button>
+            <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+              Email
+            </Button>
+            <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+              Button
+            </Button>
+            <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+              <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+                Enter your email
+              </Button>
+            </div>
+            <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+              Enter your email
+            </Button>
+          </div>
+          <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+            Email
+          </Button>
+          <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+            Email
+          </Button>
+          <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+            Button
+          </Button>
+          <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+            <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+              Enter your email
+            </Button>
+          </div>
+          <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+            Enter your email
+          </Button>
+          <div className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:973">
+            <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+              Password
+            </Button>
+            <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+              Password
+            </Button>
+            <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+              Button
+            </Button>
+            <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+              <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+                ••••••••
+              </Button>
+            </div>
+            <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+              ••••••••
+            </Button>
+          </div>
+          <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+            Password
+          </Button>
+          <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+            Password
+          </Button>
+          <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+            Button
+          </Button>
+          <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+            <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+              ••••••••
+            </Button>
+          </div>
+          <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+            ••••••••
+          </Button>
+          <Button className="w-[418px] h-5 w-full h-auto absolute top-[493px] left-[863px] flex flex-row items-stretch" data-model-id="2:983">
+            Button
+          </Button>
+          <Button className="w-[120px] h-5 w-auto h-auto absolute top-[493px] left-[863px] flex flex-row gap-2" data-model-id="2:984">
+            Remember me
+          </Button>
+          <Button className="w-4 h-4 absolute top-[495px] left-[863px] bg-white bg-white rounded border-1 border-[#dde1e6]" data-model-id="2:986">
+            Button
+          </Button>
+          <Button className="w-24 h-5 w-auto h-auto absolute top-[493px] left-[887px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:987">
+            Remember me
+          </Button>
+          <Button className="w-[114px] h-5 w-auto h-auto absolute top-[493px] left-[1167px] flex flex-row gap-2" data-model-id="2:988">
+            Forgot password
+          </Button>
+          <Button className="w-[114px] h-5 w-auto h-auto absolute top-[493px] left-[1167px] bg-[#fe701e] text-sm font-semibold text-left leading-[20px] text-[#fe701e]" data-model-id="2:989">
+            Forgot password
+          </Button>
+        </div>
+        <div className="w-[418px] h-[160px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-5" data-model-id="2:963">
+          <div className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:964">
+            <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+              Email
+            </Button>
+            <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+              Email
+            </Button>
+            <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+              Button
+            </Button>
+            <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+              <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+                Enter your email
+              </Button>
+            </div>
+            <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+              Enter your email
+            </Button>
+          </div>
+          <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+            Email
+          </Button>
+          <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+            Email
+          </Button>
+          <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+            Button
+          </Button>
+          <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+            <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+              Enter your email
+            </Button>
+          </div>
+          <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+            Enter your email
+          </Button>
+          <div className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:973">
+            <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+              Password
+            </Button>
+            <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+              Password
+            </Button>
+            <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+              Button
+            </Button>
+            <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+              <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+                ••••••••
+              </Button>
+            </div>
+            <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+              ••••••••
+            </Button>
+          </div>
+          <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+            Password
+          </Button>
+          <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+            Password
+          </Button>
+          <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+            Button
+          </Button>
+          <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+            <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+              ••••••••
+            </Button>
+          </div>
+          <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+            ••••••••
+          </Button>
+        </div>
+        <div className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:964">
+          <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+            Email
+          </Button>
+          <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+            Email
+          </Button>
+          <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+            Button
+          </Button>
+          <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+            <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+              Enter your email
+            </Button>
+          </div>
+          <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+            Enter your email
+          </Button>
+        </div>
+        <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[317px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:965">
+          Email
+        </Button>
+        <Button className="w-[36px] h-5 w-auto h-auto absolute top-[317px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:966">
+          Email
+        </Button>
+        <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[343px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:967">
+          Button
+        </Button>
+        <div className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] flex flex-row gap-2" data-model-id="2:968">
+          <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+            Enter your email
+          </Button>
+        </div>
+        <Button className="w-[390px] h-6 w-full h-auto absolute top-[353px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:970">
+          Enter your email
+        </Button>
+        <div className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:973">
+          <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+            Password
+          </Button>
+          <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+            Password
+          </Button>
+          <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+            Button
+          </Button>
+          <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+            <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+              ••••••••
+            </Button>
+          </div>
+          <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+            ••••••••
+          </Button>
+        </div>
+        <Button className="w-[418px] h-[70px] w-full h-auto absolute top-[407px] left-[863px] flex flex-col items-stretch gap-2" data-model-id="2:974">
+          Password
+        </Button>
+        <Button className="w-[65px] h-5 w-auto h-auto absolute top-[407px] left-[863px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:975">
+          Password
+        </Button>
+        <Button className="w-[418px] h-[44px] w-full h-auto absolute top-[433px] left-[863px] flex flex-row items-stretch gap-2 bg-white bg-white rounded-lg border-1 border-[#dde1e6] shadow-sm pt-[10px] pr-[14px] pb-[10px] pl-[14px]" data-model-id="2:976">
+          Button
+        </Button>
+        <div className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] flex flex-row gap-2" data-model-id="2:977">
+          <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+            ••••••••
+          </Button>
+        </div>
+        <Button className="w-[362px] h-6 w-full h-auto absolute top-[443px] left-[877px] bg-[#878d96] text-base font-normal text-left leading-[24px] text-[#878d96]" data-model-id="2:979">
+          ••••••••
+        </Button>
+        <Button className="w-[418px] h-5 w-full h-auto absolute top-[493px] left-[863px] flex flex-row items-stretch" data-model-id="2:983">
+          Button
+        </Button>
+        <Button className="w-[120px] h-5 w-auto h-auto absolute top-[493px] left-[863px] flex flex-row gap-2" data-model-id="2:984">
+          Remember me
+        </Button>
+        <Button className="w-4 h-4 absolute top-[495px] left-[863px] bg-white bg-white rounded border-1 border-[#dde1e6]" data-model-id="2:986">
+          Button
+        </Button>
+        <Button className="w-24 h-5 w-auto h-auto absolute top-[493px] left-[887px] bg-[#0d0d1b] text-sm font-normal text-left leading-[20px] text-[#0d0d1b]" data-model-id="2:987">
+          Remember me
+        </Button>
+        <Button className="w-[114px] h-5 w-auto h-auto absolute top-[493px] left-[1167px] flex flex-row gap-2" data-model-id="2:988">
+          Forgot password
+        </Button>
+        <Button className="w-[114px] h-5 w-auto h-auto absolute top-[493px] left-[1167px] bg-[#fe701e] text-sm font-semibold text-left leading-[20px] text-[#fe701e]" data-model-id="2:989">
+          Forgot password
+        </Button>
+        <Button className="w-[418px] h-[211px] w-full h-auto absolute top-[537px] left-[863px] flex flex-col items-stretch gap-4" data-model-id="2:990">
+          Button
+        </Button>
+        <Button className="w-[418px] h-12 w-full absolute top-[537px] left-[863px] flex flex-row gap-3 bg-[#1d61e7] bg-[#1d61e7] rounded-xl shadow-sm shadow-sm pt-[10px] pr-[24px] pb-[10px] pl-[24px]" data-model-id="I2:991;139:14380">
+          Log in
+        </Button>
+        <Button className="w-[41px] h-5 w-auto h-auto absolute top-[551px] left-[1052px] bg-white text-sm font-semibold text-left leading-[20px] text-white" data-model-id="I2:991;139:14381">
+          Log in
+        </Button>
+        <Button className="w-5 h-5 w-auto h-auto absolute top-[601px] left-[1062px] bg-[#878d96] text-sm font-normal text-left leading-[20px] text-[#878d96]" data-model-id="2:994">
+          OR
+        </Button>
+        <Button className="w-[418px] h-[111px] w-full h-auto absolute top-[637px] left-[863px] flex flex-col items-stretch gap-4" data-model-id="2:996">
+          Button
+        </Button>
+        <Button className="w-[418px] h-12 w-full absolute top-[637px] left-[863px] flex flex-row gap-3 bg-white bg-white rounded-xl border-1 border-[#f2f4f8] pt-[10px] pr-[24px] pb-[10px] pl-[24px]" data-model-id="I2:997;139:14440">
+          Continue with Google
+        </Button>
+        <Button className="w-[147px] h-5 w-auto h-auto absolute top-[651px] left-[1014px] bg-[#0d0d1b] text-sm font-semibold text-left leading-[20px] text-[#0d0d1b]" data-model-id="I2:997;139:14442">
+          Continue with Google
+        </Button>
+        <Button className="w-[418px] h-12 w-full absolute top-[700px] left-[863px] flex flex-row gap-3 bg-white bg-white rounded-xl border-1 border-[#f2f4f8] pt-[10px] pr-[24px] pb-[10px] pl-[24px]" data-model-id="I2:998;139:14440">
+          Continue in with Microsoft
+        </Button>
+        <Button className="w-[179px] h-5 w-auto h-auto absolute top-[714px] left-[998px] bg-[#0d0d1b] text-sm font-semibold text-left leading-[20px] text-[#0d0d1b]" data-model-id="I2:998;139:14442">
+          Continue in with Microsoft
+        </Button>
+      </div>
+    </main>
+  );
+}

@@ -17,6 +17,9 @@
     "jsx": "react-jsx"
   },
   "include": ["src"],
+  "exclude": [
+    "src/pages/figma/information for Cursor/trios/*_extracted/**/*"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
