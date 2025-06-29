@@ -1,0 +1,400 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --12-regular-font-family: "Inter", Helvetica;
+  --12-regular-font-size: 12px;
+  --12-regular-font-style: normal;
+  --12-regular-font-weight: 400;
+  --12-regular-letter-spacing: 0px;
+  --12-regular-line-height: 16px;
+  --14-regular-font-family: "Inter", Helvetica;
+  --14-regular-font-size: 14px;
+  --14-regular-font-style: normal;
+  --14-regular-font-weight: 400;
+  --14-regular-letter-spacing: 0px;
+  --14-regular-line-height: 20px;
+  --14-semibold-font-family: "Inter", Helvetica;
+  --14-semibold-font-size: 14px;
+  --14-semibold-font-style: normal;
+  --14-semibold-font-weight: 600;
+  --14-semibold-letter-spacing: 0px;
+  --14-semibold-line-height: 20px;
+  --24-semibold-font-family: "Inter", Helvetica;
+  --24-semibold-font-size: 24px;
+  --24-semibold-font-style: normal;
+  --24-semibold-font-weight: 600;
+  --24-semibold-letter-spacing: 0px;
+  --24-semibold-line-height: 36px;
+  --black-100: rgba(0, 0, 0, 1);
+  --black-80: rgba(0, 0, 0, 0.8);
+  --colors-background-bg1: var(--colors-white-100);
+  --colors-background-bg2: rgba(249, 249, 250, 1);
+  --colors-background-bg3: rgba(230, 241, 253, 1);
+  --colors-background-bg4: rgba(237, 238, 252, 1);
+  --colors-black-10: rgba(0, 0, 0, 0.1);
+  --colors-black-100: rgba(0, 0, 0, 1);
+  --colors-black-20: rgba(0, 0, 0, 0.2);
+  --colors-black-4: rgba(0, 0, 0, 0.04);
+  --colors-black-40: rgba(0, 0, 0, 0.4);
+  --colors-primary-brand: var(--colors-black-100);
+  --colors-secondary-blue: rgba(146, 191, 255, 1);
+  --colors-secondary-cyan: rgba(174, 199, 237, 1);
+  --colors-secondary-green: rgba(148, 233, 184, 1);
+  --colors-secondary-indigo: rgba(159, 159, 248, 1);
+  --colors-secondary-mint: rgba(150, 226, 214, 1);
+  --colors-white-100: rgba(255, 255, 255, 1);
+  --colors-white-20: rgba(255, 255, 255, 0.2);
+  --corner-radius-12-duplicate: 12px;
+  --corner-radius-16-duplicate: 16px;
+  --corner-radius-24: 24px;
+  --corner-radius-4-duplicate: 4px;
+  --corner-radius-8: 8px;
+  --corner-radius-80: 80px;
+  --icon-size-28-duplicate: 28px;
+  --show-icon-show-icon: initial;
+  --show-text-show-text: initial;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24-duplicate: 24px;
+  --spacing-28: 28px;
+  --spacing-4: 4px;
+  --spacing-40: 40px;
+  --spacing-8-duplicate: 8px;
+  --spacing-radius-8: 8px;
+  --spacing-size-20: 20px;
+  --spacing-size-28: 28px;
+  --themes-black-100-duplicate: rgba(28, 28, 28, 1);
+  --white-100: rgba(255, 255, 255, 1);
+  --white-40: rgba(255, 255, 255, 0.4);
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-spacing-mode="standard">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-spacing-mode="standard"] {
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24-duplicate: 24px;
+  --spacing-28: 28px;
+  --spacing-4: 4px;
+  --spacing-40: 40px;
+  --spacing-8-duplicate: 8px;
+  --spacing-size-20: 20px;
+  --spacing-size-28: 28px;
+}
+
+[data-spacing-mode="expanded-4"] {
+  --spacing-12: 16px;
+  --spacing-16: 20px;
+  --spacing-20: 24px;
+  --spacing-24-duplicate: 28px;
+  --spacing-28: 32px;
+  --spacing-4: 8px;
+  --spacing-40: 44px;
+  --spacing-8-duplicate: 12px;
+  --spacing-size-20: 24px;
+  --spacing-size-28: 32px;
+}
+
+[data-spacing-mode="expanded-8"] {
+  --spacing-12: 20px;
+  --spacing-16: 24px;
+  --spacing-20: 28px;
+  --spacing-24-duplicate: 32px;
+  --spacing-28: 36px;
+  --spacing-4: 12px;
+  --spacing-40: 48px;
+  --spacing-8-duplicate: 16px;
+  --spacing-size-20: 16px;
+  --spacing-size-28: 24px;
+}
+
+[data-spacing-mode="condensed-4"] {
+  --spacing-12: 8px;
+  --spacing-16: 12px;
+  --spacing-20: 16px;
+  --spacing-24-duplicate: 20px;
+  --spacing-28: 24px;
+  --spacing-4: 0px;
+  --spacing-40: 36px;
+  --spacing-8-duplicate: 4px;
+  --spacing-size-20: 20px;
+  --spacing-size-28: 28px;
+}
+
+[data-corner-radius-mode="standard"] {
+  --corner-radius-12-duplicate: 12px;
+  --corner-radius-16-duplicate: 16px;
+  --corner-radius-4-duplicate: 4px;
+  --corner-radius-8: 8px;
+  --corner-radius-80: 80px;
+}
+
+[data-corner-radius-mode="expanded-4"] {
+  --corner-radius-12-duplicate: 16px;
+  --corner-radius-16-duplicate: 20px;
+  --corner-radius-4-duplicate: 8px;
+  --corner-radius-8: 12px;
+  --corner-radius-80: 84px;
+}
+
+[data-corner-radius-mode="expanded-8"] {
+  --corner-radius-12-duplicate: 20px;
+  --corner-radius-16-duplicate: 24px;
+  --corner-radius-4-duplicate: 12px;
+  --corner-radius-8: 16px;
+  --corner-radius-80: 88px;
+}
+
+[data-corner-radius-mode="condensed-4"] {
+  --corner-radius-12-duplicate: 8px;
+  --corner-radius-16-duplicate: 12px;
+  --corner-radius-4-duplicate: 0px;
+  --corner-radius-8: 4px;
+  --corner-radius-80: 76px;
+}
+
+[data-corner-radius-mode="standard"] {
+  --corner-radius-24: 24px;
+}
+
+[data-corner-radius-mode="expanded-4"] {
+  --corner-radius-24: 28px;
+}
+
+[data-corner-radius-mode="expanded-8"] {
+  --corner-radius-24: 32px;
+}
+
+[data-corner-radius-mode="condensed-4"] {
+  --corner-radius-24: 20px;
+}
+
+[data-colors-mode="snowui-light"] {
+  --colors-background-bg1: var(--colors-white-100);
+  --colors-background-bg2: rgba(249, 249, 250, 1);
+  --colors-background-bg3: rgba(230, 241, 253, 1);
+  --colors-background-bg4: rgba(237, 238, 252, 1);
+  --colors-black-10: rgba(0, 0, 0, 0.1);
+  --colors-black-100: rgba(0, 0, 0, 1);
+  --colors-black-20: rgba(0, 0, 0, 0.2);
+  --colors-black-4: rgba(0, 0, 0, 0.04);
+  --colors-black-40: rgba(0, 0, 0, 0.4);
+  --colors-primary-brand: var(--colors-black-100);
+  --colors-secondary-blue: rgba(146, 191, 255, 1);
+  --colors-secondary-cyan: rgba(174, 199, 237, 1);
+  --colors-secondary-green: rgba(148, 233, 184, 1);
+  --colors-secondary-indigo: rgba(159, 159, 248, 1);
+  --colors-secondary-mint: rgba(150, 226, 214, 1);
+  --colors-white-100: rgba(255, 255, 255, 1);
+  --colors-white-20: rgba(255, 255, 255, 0.2);
+}
+
+[data-colors-mode="snowui-dark"] {
+  --colors-background-bg1: rgba(42, 42, 42, 1);
+  --colors-background-bg2: rgba(255, 255, 255, 0.04);
+  --colors-background-bg3: rgba(230, 241, 253, 1);
+  --colors-background-bg4: rgba(237, 238, 252, 1);
+  --colors-black-10: rgba(255, 255, 255, 0.15);
+  --colors-black-100: rgba(255, 255, 255, 1);
+  --colors-black-20: rgba(255, 255, 255, 0.2);
+  --colors-black-4: rgba(255, 255, 255, 0.1);
+  --colors-black-40: rgba(255, 255, 255, 0.4);
+  --colors-primary-brand: var(--colors-secondary-indigo);
+  --colors-secondary-blue: rgba(146, 191, 255, 1);
+  --colors-secondary-cyan: rgba(174, 199, 237, 1);
+  --colors-secondary-green: rgba(148, 233, 184, 1);
+  --colors-secondary-indigo: rgba(159, 159, 248, 1);
+  --colors-secondary-mint: rgba(150, 226, 214, 1);
+  --colors-white-100: rgba(0, 0, 0, 1);
+  --colors-white-20: rgba(0, 0, 0, 0.2);
+}
+
+[data-colors-mode="ios-macos-light"] {
+  --colors-background-bg1: rgba(245, 245, 246, 1);
+  --colors-background-bg2: var(--colors-white-100);
+  --colors-background-bg3: rgba(0, 0, 0, 0.01);
+  --colors-background-bg4: rgba(0, 0, 0, 0.03);
+  --colors-black-10: rgba(0, 0, 0, 0.1);
+  --colors-black-100: rgba(0, 0, 0, 1);
+  --colors-black-20: rgba(0, 0, 0, 0.2);
+  --colors-black-4: rgba(0, 0, 0, 0.04);
+  --colors-black-40: rgba(0, 0, 0, 0.4);
+  --colors-primary-brand: var(--colors-secondary-blue);
+  --colors-secondary-blue: rgba(0, 122, 255, 1);
+  --colors-secondary-cyan: rgba(50, 173, 230, 1);
+  --colors-secondary-green: rgba(52, 199, 89, 1);
+  --colors-secondary-indigo: rgba(88, 86, 214, 1);
+  --colors-secondary-mint: rgba(0, 199, 190, 1);
+  --colors-white-100: rgba(255, 255, 255, 1);
+  --colors-white-20: rgba(255, 255, 255, 0.2);
+}
+
+[data-colors-mode="ios-macos-dark"] {
+  --colors-background-bg1: rgba(42, 42, 42, 1);
+  --colors-background-bg2: rgba(255, 255, 255, 0.04);
+  --colors-background-bg3: rgba(0, 0, 0, 0.1);
+  --colors-background-bg4: rgba(0, 0, 0, 0.15);
+  --colors-black-10: rgba(255, 255, 255, 0.15);
+  --colors-black-100: rgba(255, 255, 255, 1);
+  --colors-black-20: rgba(255, 255, 255, 0.2);
+  --colors-black-4: rgba(255, 255, 255, 0.1);
+  --colors-black-40: rgba(255, 255, 255, 0.4);
+  --colors-primary-brand: var(--colors-secondary-blue);
+  --colors-secondary-blue: rgba(10, 132, 255, 1);
+  --colors-secondary-cyan: rgba(100, 210, 255, 1);
+  --colors-secondary-green: rgba(48, 209, 88, 1);
+  --colors-secondary-indigo: rgba(94, 92, 230, 1);
+  --colors-secondary-mint: rgba(99, 230, 226, 1);
+  --colors-white-100: rgba(0, 0, 0, 1);
+  --colors-white-20: rgba(0, 0, 0, 0.2);
+}
+
+[data-themes-mode="pastel-light"] {
+  --themes-black-100-duplicate: rgba(28, 28, 28, 1);
+}
+
+[data-themes-mode="pastel-dark"] {
+  --themes-black-100-duplicate: rgba(255, 255, 255, 1);
+}
+
+[data-themes-mode="bright-light"] {
+  --themes-black-100-duplicate: rgba(46, 52, 62, 1);
+}
+
+[data-themes-mode="bright-dark"] {
+  --themes-black-100-duplicate: rgba(255, 255, 255, 1);
+}
+
+[data-show-text-mode="true"] {
+  --show-text-show-text: initial;
+}
+
+[data-show-text-mode="false"] {
+  --show-text-show-text: none;
+}
+
+[data-icon-size-mode="standard"] {
+  --icon-size-28-duplicate: 28px;
+}
+
+[data-icon-size-mode="expanded-4"] {
+  --icon-size-28-duplicate: 32px;
+}
+
+[data-icon-size-mode="expanded-8"] {
+  --icon-size-28-duplicate: 36px;
+}
+
+[data-icon-size-mode="condensed-4"] {
+  --icon-size-28-duplicate: 24px;
+}
+
+[data-show-icon-mode="true"] {
+  --show-icon-show-icon: initial;
+}
+
+[data-show-icon-mode="false"] {
+  --show-icon-show-icon: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

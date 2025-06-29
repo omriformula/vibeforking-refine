@@ -51,7 +51,7 @@ interface FigmaNode {
 
 const FigmaIntegration = () => {
   const [figmaToken, setFigmaToken] = useState('figd_DpCLNHWBW36aPFlobWTuk6JcE1g0-APGK2JwyNEi');
-  const [figmaFileUrl, setFigmaFileUrl] = useState('b6cCoBPoxVOlanhY4aqlun');
+  const [figmaFileUrl, setFigmaFileUrl] = useState('CbS1cPHwdvmOJfPJFzKodU');
   const [connectDialogOpen, setConnectDialogOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
