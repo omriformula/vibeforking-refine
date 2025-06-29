@@ -29,7 +29,9 @@ import {
   Preview as PreviewIcon,
   Code as CodeIcon,
   Folder as FolderIcon,
-  Image as ImageIcon
+  Image as ImageIcon,
+  ContentCopy as CopyIcon,
+  Download as DownloadIcon
 } from '@mui/icons-material';
 import LiveCodePreview from '../../components/LiveCodePreview';
 
@@ -58,6 +60,7 @@ const FigmaIntegration = () => {
   const [figmaNodes, setFigmaNodes] = useState<FigmaNode[]>([]);
   const [selectedNode, setSelectedNode] = useState<FigmaNode | null>(null);
   const [generatedCode, setGeneratedCode] = useState('');
+  const [rawJsonResponse, setRawJsonResponse] = useState<any>(null);
   const [error, setError] = useState('');
 
   const handleConnect = async () => {
@@ -135,6 +138,7 @@ const FigmaIntegration = () => {
         last_modified: data.lastModified || new Date().toISOString()
       });
       setFigmaNodes(data.document?.children || []);
+      setRawJsonResponse(data); // Store the complete raw response
       setFigmaFileUrl('');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load Figma file');
@@ -228,6 +232,34 @@ export default ${node.name.replace(/[^a-zA-Z0-9]/g, '')}Component;
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleCopyJson = async () => {
+    if (!rawJsonResponse) return;
+    
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(rawJsonResponse, null, 2));
+      // You could add a toast notification here if you want
+      console.log('JSON copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy JSON:', err);
+    }
+  };
+
+  const handleDownloadJson = () => {
+    if (!rawJsonResponse || !selectedFile) return;
+    
+    const jsonString = JSON.stringify(rawJsonResponse, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${selectedFile.name.replace(/[^a-zA-Z0-9]/g, '_')}_figma_data.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   const renderNodeTree = (nodes: FigmaNode[], depth = 0) => {
@@ -335,6 +367,7 @@ export default ${node.name.replace(/[^a-zA-Z0-9]/g, '')}Component;
 
               <Tabs value={currentTab} onChange={(_, newValue) => setCurrentTab(newValue)} sx={{ mb: 3 }}>
                 <Tab label="Design Nodes" icon={<ImageIcon />} />
+                {rawJsonResponse && <Tab label="Raw JSON" icon={<CodeIcon />} />}
                 {generatedCode && <Tab label="Live Preview" icon={<PreviewIcon />} />}
                 {generatedCode && <Tab label="Generated Code" icon={<CodeIcon />} />}
               </Tabs>
@@ -364,7 +397,49 @@ export default ${node.name.replace(/[^a-zA-Z0-9]/g, '')}Component;
                 </Box>
               )}
 
-              {currentTab === 1 && generatedCode && (
+              {currentTab === 1 && rawJsonResponse && (
+                <Box>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                    <Typography variant="h6">
+                      Raw JSON Response - {selectedFile?.name}
+                    </Typography>
+                    <Box sx={{ display: 'flex', gap: 1 }}>
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        startIcon={<CopyIcon />}
+                        onClick={handleCopyJson}
+                      >
+                        Copy JSON
+                      </Button>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        startIcon={<DownloadIcon />}
+                        onClick={handleDownloadJson}
+                      >
+                        Download JSON
+                      </Button>
+                    </Box>
+                  </Box>
+                  <Card>
+                    <CardContent>
+                      <pre style={{ 
+                        background: '#f5f5f5', 
+                        padding: '16px', 
+                        borderRadius: '4px',
+                        overflow: 'auto',
+                        fontSize: '12px',
+                        maxHeight: '70vh'
+                      }}>
+                        {JSON.stringify(rawJsonResponse, null, 2)}
+                      </pre>
+                    </CardContent>
+                  </Card>
+                </Box>
+              )}
+
+              {currentTab === 2 && generatedCode && (
                 <Box>
                   <Typography variant="h6" gutterBottom>
                     Live Preview - {selectedNode?.name}
@@ -383,7 +458,7 @@ export default ${node.name.replace(/[^a-zA-Z0-9]/g, '')}Component;
                 </Box>
               )}
 
-              {currentTab === 2 && generatedCode && (
+              {currentTab === 3 && generatedCode && (
                 <Box>
                   <Typography variant="h6" gutterBottom>
                     Generated Code for {selectedNode?.name}
