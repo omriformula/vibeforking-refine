@@ -28,23 +28,23 @@ export class ComponentClassifier {
     const node = component.originalNode;
     const alternatives: Array<{type: ComponentType; confidence: number; reason: string}> = [];
 
-    // 🔥 CACHE BUSTER - FRESH CODE VERIFICATION - BUILD 4:28PM
-    console.log(`🔥 FRESH ComponentClassifier - Build 4:28PM - Classifying: "${component.name}"`);
+    // 🔥 CACHE BUSTER - FRESH CODE VERIFICATION - BUILD 5:28PM
+    console.log(`🔥 FRESH ComponentClassifier - Build 5:28PM - Classifying: "${component.name}"`);
 
     // Classification pipeline based on our analysis
     
-    // 1. Check for interactive elements first (highest priority) - LOWERED THRESHOLDS
+    // 1. Check for interactive elements first (highest priority) - RAISED THRESHOLDS TO FIX OVER-DETECTION
     const buttonResult = await this.buttonClassifier.classify(component);
-    console.log(`🔘 Button classification for "${component.name}": ${buttonResult.confidence.toFixed(2)} (threshold: 0.2)`);
-    if (buttonResult.confidence > 0.2) { // LOWERED from 0.3 to 0.2
+    console.log(`🔘 Button classification for "${component.name}": ${buttonResult.confidence.toFixed(2)} (threshold: 0.5)`);
+    if (buttonResult.confidence > 0.5) { // RAISED from 0.2 to 0.5 to fix over-detection
       console.log(`✅ BUTTON ACCEPTED: "${component.name}" with confidence ${buttonResult.confidence.toFixed(2)}`);
       return this.createResult(component, ComponentType.BUTTON, buttonResult.confidence, buttonResult.reasons, alternatives);
     }
     alternatives.push({type: ComponentType.BUTTON, confidence: buttonResult.confidence, reason: buttonResult.reasons[0] || 'Low button confidence'});
 
     const inputResult = await this.inputClassifier.classify(component);
-    console.log(`📝 Input classification for "${component.name}": ${inputResult.confidence.toFixed(2)} (threshold: 0.2)`);
-    if (inputResult.confidence > 0.2) { // LOWERED from 0.3 to 0.2
+    console.log(`📝 Input classification for "${component.name}": ${inputResult.confidence.toFixed(2)} (threshold: 0.5)`);
+    if (inputResult.confidence > 0.5) { // RAISED from 0.2 to 0.5 to fix over-detection
       console.log(`✅ INPUT ACCEPTED: "${component.name}" with confidence ${inputResult.confidence.toFixed(2)}`);
       return this.createResult(component, ComponentType.INPUT, inputResult.confidence, inputResult.reasons, alternatives);
     }

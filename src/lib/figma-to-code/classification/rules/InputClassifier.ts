@@ -22,17 +22,25 @@ export class InputClassifier {
     let confidence = 0;
     const reasons: string[] = [];
 
-    // Allow FRAME, RECTANGLE, or TEXT to be input candidates
-    if (!['FRAME', 'RECTANGLE', 'TEXT'].includes(node.type)) {
-      return { confidence: 0, reasons: ['Not a frame, rectangle, or text'] };
+    // MORE RESTRICTIVE: Only FRAME and RECTANGLE can be inputs, not TEXT
+    // This prevents over-classification of text elements as inputs
+    if (!['FRAME', 'RECTANGLE'].includes(node.type)) {
+      return { confidence: 0, reasons: ['Only FRAME and RECTANGLE nodes can be inputs'] };
     }
 
-    // Check for input indicators
+    // Check for input indicators (REDUCED SCORING TO PREVENT INFLATION)
     confidence += this.checkInputName(node, reasons);
     confidence += this.checkInputStyling(node, reasons);
     confidence += this.checkInputContent(component, reasons);
     confidence += this.checkInputSize(node, reasons);
     confidence += this.checkInputContext(component, reasons);
+
+    // STRICTER: Require multiple indicators for high confidence
+    const indicatorCount = reasons.length;
+    if (indicatorCount < 2) {
+      confidence *= 0.5; // Reduce confidence if only 1 indicator
+      reasons.push(`Only ${indicatorCount} indicator(s) found - reducing confidence`);
+    }
 
     // Normalize confidence to 0-1 range
     confidence = Math.min(confidence, 1);
@@ -46,17 +54,27 @@ export class InputClassifier {
   private checkInputName(node: FigmaNode, reasons: string[]): number {
     if (!node.name) return 0;
 
-    const inputNames = [
-      /input/i, /field/i, /text.*field/i, /form.*field/i,
-      /email/i, /password/i, /username/i, /search/i,
-      /textarea/i, /textbox/i, /entry/i, /text$/i,
-      /enter.*your/i, /type.*here/i, /placeholder/i
+    const strongInputNames = [
+      /^input$/i, /^field$/i, /^text.*field$/i, /^form.*field$/i,
+      /^email$/i, /^password$/i, /^username$/i, /^search$/i,
+      /^textarea$/i, /^textbox$/i, /^entry$/i
     ];
 
-    for (const pattern of inputNames) {
+    for (const pattern of strongInputNames) {
       if (pattern.test(node.name)) {
-        reasons.push(`Input name pattern: ${node.name}`);
-        return 0.5;
+        reasons.push(`Strong input name pattern: ${node.name}`);
+        return 0.3; // REDUCED from 0.5 to 0.3
+      }
+    }
+
+    const weakInputNames = [
+      /input/i, /field/i, /text$/i, /enter.*your/i, /type.*here/i, /placeholder/i
+    ];
+
+    for (const pattern of weakInputNames) {
+      if (pattern.test(node.name)) {
+        reasons.push(`Weak input name pattern: ${node.name}`);
+        return 0.15; // Lower score for weaker matches
       }
     }
 
@@ -69,29 +87,29 @@ export class InputClassifier {
   private checkInputStyling(node: FigmaNode, reasons: string[]): number {
     let score = 0;
 
-    // Has border (most inputs have borders)
+    // REDUCED: Border score was too high
     if (node.strokes && node.strokes.length > 0) {
       reasons.push('Has border stroke');
-      score += 0.4;
+      score += 0.2; // REDUCED from 0.4 to 0.2
     }
 
-    // Light/minimal background
+    // Light/minimal background (more selective)
     if (node.fills && node.fills.length > 0) {
       const fill = node.fills[0];
       if (fill.type === 'SOLID' && fill.color) {
         // Light colors suggest input fields
         const brightness = (fill.color.r + fill.color.g + fill.color.b) / 3;
-        if (brightness > 0.9) {
-          reasons.push('Light background color');
-          score += 0.2;
+        if (brightness > 0.95) { // STRICTER: Only very light backgrounds
+          reasons.push('Very light background color');
+          score += 0.15; // REDUCED from 0.2 to 0.15
         }
       }
     }
 
-    // Subtle corner radius
-    if (node.cornerRadius && node.cornerRadius > 0 && node.cornerRadius <= 12) {
+    // Subtle corner radius (more selective)
+    if (node.cornerRadius && node.cornerRadius > 0 && node.cornerRadius <= 8) { // STRICTER: max 8px
       reasons.push(`Subtle corner radius: ${node.cornerRadius}px`);
-      score += 0.1;
+      score += 0.1; // Keep same but more selective condition
     }
 
     return score;

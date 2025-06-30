@@ -29,17 +29,25 @@ export class ButtonClassifier {
       hasChildren: component.children.length > 0
     });
 
-    // Allow FRAME, TEXT, or RECTANGLE to be button candidates
-    if (!['FRAME', 'TEXT', 'RECTANGLE'].includes(node.type)) {
-      return { confidence: 0, reasons: ['Not a frame, text, or rectangle'] };
+    // MORE RESTRICTIVE: Only FRAME nodes can be buttons, not TEXT or RECTANGLE
+    // This prevents over-classification of text elements as buttons
+    if (node.type !== 'FRAME') {
+      return { confidence: 0, reasons: ['Only FRAME nodes can be buttons'] };
     }
 
-    // Check for button indicators
+    // Check for button indicators (REDUCED SCORING TO PREVENT INFLATION)
     confidence += this.checkButtonName(node, reasons);
     confidence += this.checkButtonStyling(node, reasons);
     confidence += this.checkButtonContent(component, reasons);
     confidence += this.checkButtonSize(node, reasons);
     confidence += this.checkButtonInteraction(node, reasons);
+
+    // STRICTER: Require multiple indicators for high confidence
+    const indicatorCount = reasons.length;
+    if (indicatorCount < 2) {
+      confidence *= 0.5; // Reduce confidence if only 1 indicator
+      reasons.push(`Only ${indicatorCount} indicator(s) found - reducing confidence`);
+    }
 
     // Normalize confidence to 0-1 range
     confidence = Math.min(confidence, 1);
@@ -59,18 +67,30 @@ export class ButtonClassifier {
     if (!node.name) return 0;
 
     const buttonNames = [
-      /button/i, /btn/i, /submit/i, /login/i, /sign.*in/i, /log.*in/i,
-      /register/i, /continue/i, /next/i, /back/i, /save/i,
-      /cancel/i, /close/i, /ok/i, /yes/i, /no/i, /confirm/i,
-      /create/i, /add/i, /delete/i, /edit/i, /update/i,
-      /google/i, /microsoft/i, /facebook/i, /github/i, /apple/i,
-      /forgot.*password/i, /sign.*up/i, /remember.*me/i
+      /^button$/i, /^btn$/i, /^submit$/i, /^login$/i, /^sign[\s\-_]*in$/i, /^log[\s\-_]*in$/i,
+      /^register$/i, /^continue$/i, /^next$/i, /^back$/i, /^save$/i,
+      /^cancel$/i, /^close$/i, /^ok$/i, /^yes$/i, /^no$/i, /^confirm$/i,
+      /^create$/i, /^add$/i, /^delete$/i, /^edit$/i, /^update$/i,
+      /continue.*with.*google/i, /continue.*with.*microsoft/i, /sign.*up$/i,
+      /forgot.*password/i, /remember.*me/i, /get.*started/i
     ];
 
     for (const pattern of buttonNames) {
       if (pattern.test(node.name)) {
-        reasons.push(`Button name pattern: ${node.name}`);
-        return 0.4;
+        reasons.push(`Strong button name pattern: ${node.name}`);
+        return 0.3; // REDUCED from 0.4 to 0.3
+      }
+    }
+
+    // Check for weaker button indicators
+    const weakButtonNames = [
+      /button/i, /btn/i, /click/i
+    ];
+
+    for (const pattern of weakButtonNames) {
+      if (pattern.test(node.name)) {
+        reasons.push(`Weak button name pattern: ${node.name}`);
+        return 0.15; // Lower score for weaker matches
       }
     }
 
@@ -83,26 +103,29 @@ export class ButtonClassifier {
   private checkButtonStyling(node: FigmaNode, reasons: string[]): number {
     let score = 0;
 
-    // Has background fill
-    if (node.fills && node.fills.length > 0) {
-      const solidFill = node.fills.find(fill => fill.type === 'SOLID');
-      if (solidFill) {
-        reasons.push('Has solid background fill');
-        score += 0.3;
-      }
+    // STRICTER: Require both background AND corner radius for strong button styling
+    const hasBackground = node.fills && node.fills.length > 0 && 
+      node.fills.some(fill => fill.type === 'SOLID');
+    const hasCornerRadius = node.cornerRadius && node.cornerRadius > 0;
+
+    if (hasBackground && hasCornerRadius) {
+      reasons.push('Has button styling (background + corners)');
+      score += 0.25; // REDUCED from 0.3 to 0.25
+    } else if (hasBackground) {
+      reasons.push('Has background fill (partial button styling)');
+      score += 0.1; // REDUCED from 0.3 to 0.1
+    } else if (hasCornerRadius) {
+      reasons.push('Has corner radius (partial button styling)');
+      score += 0.05; // REDUCED from 0.2 to 0.05
     }
 
-    // Has corner radius (buttons are usually rounded)
-    if (node.cornerRadius && node.cornerRadius > 0) {
-      reasons.push(`Has corner radius: ${node.cornerRadius}px`);
-      score += 0.2;
-    }
-
-    // Has appropriate padding
-    if (node.paddingLeft || node.paddingRight || node.paddingTop || node.paddingBottom) {
-      reasons.push('Has padding (button-like spacing)');
+    // Additional styling bonus for clear button appearance
+    if (node.strokes && node.strokes.length > 0 && hasBackground) {
+      reasons.push('Has border with background (strong button styling)');
       score += 0.1;
     }
+
+    // REMOVED: Padding check as it's too generic and causes over-detection
 
     return score;
   }
